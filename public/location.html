@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="locationData"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            try {
+                const response = await fetch('/data');
+                const data = await response.json();
+
+                const locationData = data.locationData;
+                const locationElement = document.getElementById('locationData');
+
+                if (locationData) {
+                    const locationText = `${locationData.location}`;
+                    locationElement.innerText = locationText;
+                } else {
+                    locationElement.innerText = 'Locatiedata niet beschikbaar.';
+                }
+            } catch (error) {
+                console.error('Fout bij het ophalen van locatiedata:', error);
+            }
+        });
+    </script>
+</body>
+</html>
