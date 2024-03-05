@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const app = express();
 const port = 3000;
 
-const certbotPath = 'C:/Certbot/live/irllogger.duckdns.org/';
+const certbotPath = 'C:/path/to/certificate';
 
 console.log('Certificaatpad:', certbotPath);
 
