@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
 
-        fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=AIzaSyB5JIk9Dm2n73UNxp_5zXE-57v7aDhb1b0`)
+        fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${latitude},${longitude}&key=API_KEY`)
             .then(response => response.json())
             .then(data => {
                 const addressInfo = data.results[0];
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Functie om de temperatuur op te halen
     function getTemperature(latitude, longitude) {
-        const apiKey = '54562ac676c8a848c27bde9fa94f56db';
+        const apiKey = 'API_KEY';
 
         fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`)
             .then(response => response.json())
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function getCountryCode(city, callback) {
         // Functie om landcode op te halen
-        fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${city}&key=AIzaSyB5JIk9Dm2n73UNxp_5zXE-57v7aDhb1b0`)
+        fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${city}&key=API_KEY`)
             .then(response => response.json())
             .then(data => {
                 const addressInfo = data.results[0];
