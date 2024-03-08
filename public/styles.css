@@ -1,5 +1,9 @@
 /* In styles.css */
 body {
   font-family: "Roobert";
-  font-size: 16px;
+  font-size: 20px; /* Verander de grootte naar wens */
+  color: white; /* Tekstkleur instellen op wit */
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black; /* 1 pixel zwarte outline */
+  font-weight: bold; /* Tekst dikgedrukt maken */
 }
+
